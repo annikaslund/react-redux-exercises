@@ -8,20 +8,38 @@ class NewMemeForm extends Component {
             topText: "", 
             botText: ""
         }
+        this.onChange = this.onChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
     }
 
-    // onChange(e){
+    onChange(e){
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
 
-    // }
-
-    // onSubmit(e){
-
-    // }
+    onSubmit(e){
+        e.preventDefault();
+        this.props.handleAdd(this.state);
+        this.setState = {
+            imgSrc: "",
+            topText: "",
+            botText: ""
+        }
+    }
 
     render(){
         return (
             <div className="NewMemeForm">
-                <p>new meme form</p>
+                <form onSubmit={this.onSubmit} >
+                    <label htmlFor="imgSrc">Url for image:</label>
+                    <input name="imgSrc" value={this.state.imgSrc} onChange={this.onChange} />
+                    <label htmlFor="topText">Top Text:</label>
+                    <input name="topText" value={this.state.topText} onChange={this.onChange} />
+                    <label htmlFor="botText">Bottom Text:</label>
+                    <input name="botText" value={this.state.botText} onChange={this.onChange} />
+                    <button>Make dis meme</button>
+                </form>
             </div>
         );
     }

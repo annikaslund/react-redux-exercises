@@ -32,7 +32,7 @@ class MemeList extends Component {
     render() {
         return (
             <div className="MemeList">
-                <NewMemeForm />
+                <NewMemeForm handleAdd={ this.addMeme }/>
                 { this.props.memes.map( m => 
                     <Meme topText={ m.topText }
                           botText={ m.botText }
