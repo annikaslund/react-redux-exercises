@@ -8,6 +8,8 @@ import memeReducer from "./memeReducer";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 
+//debugger
+
 const store = createStore(memeReducer);
 
 ReactDOM.render(
