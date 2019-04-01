@@ -13,9 +13,7 @@ function memeReducer(state = INITIAL_STATE, action) {
     } else if (action.type === "REMOVE") {
         return {
             ...state,
-            memes: [...state.memes.slice(0, action.idx),
-            ...state.memes.slice(action.idx + 1)
-            ]
+            memes: state.memes.filter( m => m.id !== action.id)
         }
     }
 
