@@ -21,11 +21,11 @@ class NewMemeForm extends Component {
     onSubmit(e){
         e.preventDefault();
         this.props.handleAdd(this.state);
-        this.setState = {
+        this.setState({
             imgSrc: "",
             topText: "",
             botText: ""
-        }
+        })
     }
 
     render(){

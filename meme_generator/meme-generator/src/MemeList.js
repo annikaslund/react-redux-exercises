@@ -22,10 +22,10 @@ class MemeList extends Component {
         });
     }
 
-    removeMeme(idx) {
+    removeMeme(id) {
         this.props.dispatch({
             type: "REMOVE",
-            idx
+            id
         });
     }
 
